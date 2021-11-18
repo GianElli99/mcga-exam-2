@@ -1,0 +1,15 @@
+.title {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--light-color);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 4rem;
+  border-bottom: 1px solid var(--nav-item-border-color);
+  background-color: var(--secondary-bg-color);
+}

@@ -4,18 +4,19 @@ import { Footer } from '../ui/Footer';
 import { Header } from '../ui/Header';
 import { MainContent } from '../ui/MainContent';
 import { NavBar } from '../ui/NavBar';
+import styles from './MainLayout.module.css';
 
 export const MainLayout = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <Header />
-      <div>
+      <div className={styles.navAndContentWrapper}>
         <NavBar />
-        <MainContent>
+        <MainContent layoutStyles={styles.mainContent}>
           <Outlet />
         </MainContent>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
