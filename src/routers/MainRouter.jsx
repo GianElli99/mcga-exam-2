@@ -12,10 +12,11 @@ export const MainRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomeScreen />} />
           <Route path="products" element={<ProductsScreen />} />
           <Route path="*" element={<NotFoundScreen />} />
+          <Route index element={<HomeScreen />} />
         </Route>
+        <Route index element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>
   );

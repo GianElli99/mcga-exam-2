@@ -1,5 +1,10 @@
 import React from 'react';
 
 export const HomeScreen = () => {
-  return <div>Home Screen</div>;
+  return (
+    <>
+      <p>Integrantes: Gianfranco Elli</p>
+      <p>Nombre de la Aplicación: Gian&apos;s Products</p>
+    </>
+  );
 };
