@@ -12,7 +12,7 @@ export const MainLayout = () => {
       <Header />
       <div className={styles.navAndContentWrapper}>
         <NavBar />
-        <MainContent layoutStyles={styles.mainContent}>
+        <MainContent>
           <Outlet />
         </MainContent>
       </div>

@@ -1,0 +1,29 @@
+.navBar {
+  width: 16%;
+  padding: 1rem;
+
+  background-color: var(--secondary-bg-color);
+}
+.list {
+  list-style: none;
+  padding: 0;
+}
+.list li {
+  margin-top: 0.5rem;
+  height: 3rem;
+  border: 2px solid var(--nav-item-border-color);
+  border-radius: 5px;
+}
+.list li:hover {
+  background-color: var(--nav-item-border-color);
+}
+.list a {
+  display: block;
+
+  padding-left: 1rem;
+  height: 100%;
+
+  line-height: 3rem;
+  color: var(--light-color);
+  text-decoration: none;
+}

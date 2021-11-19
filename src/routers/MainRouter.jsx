@@ -16,7 +16,6 @@ export const MainRouter = () => {
           <Route path="*" element={<NotFoundScreen />} />
           <Route index element={<HomeScreen />} />
         </Route>
-        <Route index element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>
   );
