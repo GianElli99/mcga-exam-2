@@ -117,7 +117,7 @@ export const updateProductAsync = (product) => async (dispatch) => {
   try {
     const res = await axios.put(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/tecnicos/${product.id}`,
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/tecnicos/${product._id}`,
       product
     );
     if (res.status === 200) {
