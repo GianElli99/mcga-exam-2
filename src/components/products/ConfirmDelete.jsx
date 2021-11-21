@@ -22,7 +22,7 @@ export const ConfirmDelete = ({ product }) => {
       <>
         <h2>You are about to delete a Product</h2>
         {error && <ErrorContainer message={error} />}
-        <p>{`This will delete ${product._id} permanently.`}</p>
+        <p>{`This will delete ${product.name} permanently.`}</p>
         <p>Are you sure?</p>
         <div className={styles.actionsContainer}>
           <Button onClick={handleCancel} variant="outlined">

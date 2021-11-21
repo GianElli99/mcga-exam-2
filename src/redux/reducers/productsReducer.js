@@ -36,7 +36,7 @@ export const productsReducer = (state = initialState, action) => {
         ...state,
         error: '',
         list: state.list.map((prod) =>
-          prod.id === action.payload.id ? action.payload : prod
+          prod._id === action.payload._id ? action.payload : prod
         ),
         isLoading: false,
         actionInProgress: NONE,
@@ -46,7 +46,7 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        list: state.list.filter((prod) => prod.id !== action.payload),
+        list: state.list.filter((prod) => prod._id !== action.payload),
         isLoading: false,
         actionInProgress: NONE,
         selectedProduct: null,
@@ -79,19 +79,19 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         actionInProgress: UPDATE,
-        selectedTechnician: { ...action.payload },
+        selectedProduct: { ...action.payload },
       };
     case PROD_SET_DELETE_ACTION:
       return {
         ...state,
         actionInProgress: DELETE,
-        selectedTechnician: { ...action.payload },
+        selectedProduct: { ...action.payload },
       };
     case PROD_UNSET_ACTION:
       return {
         ...state,
         actionInProgress: NONE,
-        selectedTechnician: null,
+        selectedProduct: null,
         error: '',
       };
     default:
