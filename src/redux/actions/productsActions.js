@@ -37,9 +37,12 @@ export const setProducts = (products) => {
   };
 };
 export const setError = (error) => {
+  console.log(error);
+  let formatted = error.join('. ');
+  console.log(formatted);
   return {
     type: PROD_SET_ERROR,
-    payload: error,
+    payload: formatted,
   };
 };
 export const setLoadingTrue = () => {
@@ -77,10 +80,10 @@ export const getProductsAsync = () => async (dispatch) => {
       `${process.env.REACT_APP_BACKEND_URL_PORT}/products`
     );
     if (res.status === 200) {
-      dispatch(setProducts(res.data));
+      return dispatch(setProducts(res.data));
     }
   } catch (error) {
-    dispatch(setError(error?.response?.data?.error));
+    return dispatch(setError(error?.response?.data?.errors));
   }
 };
 export const deleteProductsAsync = (productId) => async (dispatch) => {
@@ -91,10 +94,10 @@ export const deleteProductsAsync = (productId) => async (dispatch) => {
       `${process.env.REACT_APP_BACKEND_URL_PORT}/products/${productId}`
     );
     if (res.status === 200) {
-      dispatch(deleteProduct(productId));
+      return dispatch(deleteProduct(productId));
     }
   } catch (error) {
-    dispatch(setError(error?.response?.data?.error));
+    return dispatch(setError(error?.response?.data?.errors));
   }
 };
 export const createProductAsync = (product) => async (dispatch) => {
@@ -109,7 +112,7 @@ export const createProductAsync = (product) => async (dispatch) => {
       return dispatch(createProduct(res.data));
     }
   } catch (error) {
-    return dispatch(setError(error?.response?.data?.error));
+    return dispatch(setError(error?.response?.data?.errors));
   }
 };
 export const updateProductAsync = (product) => async (dispatch) => {
@@ -117,13 +120,13 @@ export const updateProductAsync = (product) => async (dispatch) => {
   try {
     const res = await axios.put(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/tecnicos/${product._id}`,
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/products/${product._id}`,
       product
     );
     if (res.status === 200) {
       return dispatch(updateProduct(res.data));
     }
   } catch (error) {
-    return dispatch(setError(error?.response?.data?.error));
+    return dispatch(setError(error?.response?.data?.errors));
   }
 };
