@@ -77,7 +77,7 @@ export const getProductsAsync = () => async (dispatch) => {
   try {
     const res = await axios.get(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/products`
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products`
     );
     if (res.status === 200) {
       return dispatch(setProducts(res.data));
@@ -91,7 +91,7 @@ export const deleteProductsAsync = (productId) => async (dispatch) => {
   try {
     const res = await axios.delete(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/products/${productId}`
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId}`
     );
     if (res.status === 200) {
       return dispatch(deleteProduct(productId));
@@ -105,7 +105,7 @@ export const createProductAsync = (product) => async (dispatch) => {
   try {
     const res = await axios.post(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/products`,
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products`,
       product
     );
     if (res.status === 201) {
@@ -120,7 +120,7 @@ export const updateProductAsync = (product) => async (dispatch) => {
   try {
     const res = await axios.put(
       // eslint-disable-next-line no-undef
-      `${process.env.REACT_APP_BACKEND_URL_PORT}/products/${product._id}`,
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${product._id}`,
       product
     );
     if (res.status === 200) {

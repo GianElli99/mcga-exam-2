@@ -14,7 +14,7 @@ import {
 
 const initialState = {
   list: [],
-  error: '',
+  error: null,
   isLoading: false,
   actionInProgress: NONE,
   selectedProduct: null,
@@ -25,7 +25,7 @@ export const productsReducer = (state = initialState, action) => {
     case PROD_CREATE_PRODUCT:
       return {
         ...state,
-        error: '',
+        error: null,
         list: [...state.list, action.payload],
         isLoading: false,
         actionInProgress: NONE,
@@ -34,7 +34,7 @@ export const productsReducer = (state = initialState, action) => {
     case PROD_UPDATE_PRODUCT:
       return {
         ...state,
-        error: '',
+        error: null,
         list: state.list.map((prod) =>
           prod._id === action.payload._id ? action.payload : prod
         ),
@@ -45,7 +45,7 @@ export const productsReducer = (state = initialState, action) => {
     case PROD_DELETE_PRODUCT:
       return {
         ...state,
-        error: '',
+        error: null,
         list: state.list.filter((prod) => prod._id !== action.payload),
         isLoading: false,
         actionInProgress: NONE,
@@ -55,7 +55,7 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         list: action.payload,
-        error: '',
+        error: null,
         isLoading: false,
         actionInProgress: NONE,
         selectedProduct: null,
@@ -72,7 +72,7 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         actionInProgress: CREATE,
-        error: '',
+        error: null,
         selectedProduct: null,
       };
     case PROD_SET_UPDATE_ACTION:
@@ -92,7 +92,7 @@ export const productsReducer = (state = initialState, action) => {
         ...state,
         actionInProgress: NONE,
         selectedProduct: null,
-        error: '',
+        error: null,
       };
     default:
       return state;

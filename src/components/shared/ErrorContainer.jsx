@@ -7,5 +7,5 @@ export const ErrorContainer = ({ message }) => {
 };
 
 ErrorContainer.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.array.isRequired,
 };
