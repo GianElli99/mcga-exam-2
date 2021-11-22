@@ -37,12 +37,9 @@ export const setProducts = (products) => {
   };
 };
 export const setError = (error) => {
-  console.log(error);
-  let formatted = error.join('. ');
-  console.log(formatted);
   return {
     type: PROD_SET_ERROR,
-    payload: formatted,
+    payload: error,
   };
 };
 export const setLoadingTrue = () => {
