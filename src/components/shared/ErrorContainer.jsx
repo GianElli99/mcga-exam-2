@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import Alert from '@mui/material/Alert';
 
 export const ErrorContainer = ({ message }) => {
-  return <Alert severity="error">{message}</Alert>;
+  const errorFormatted = message.join(' \n ');
+  return (
+    <Alert style={{ whiteSpace: 'pre-line' }} severity="error">
+      {errorFormatted}
+    </Alert>
+  );
 };
 
 ErrorContainer.propTypes = {
