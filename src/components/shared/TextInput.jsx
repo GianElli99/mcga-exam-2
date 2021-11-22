@@ -2,11 +2,12 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 
-export const TextInput = ({ input, meta, name, required = true }) => {
+export const TextInput = ({ input, meta, name, required = true, ...rest }) => {
   return (
     <TextField
       type="text"
       {...input}
+      {...rest}
       autoComplete="off"
       label={name}
       required={required}

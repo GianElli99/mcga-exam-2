@@ -6,8 +6,16 @@ import { ErrorContainer } from '../shared/ErrorContainer';
 import { Field, Form } from 'react-final-form';
 import Button from '@mui/lab/LoadingButton';
 import { TextInput } from '../shared/TextInput';
+import Checkbox from '@mui/material/Checkbox';
 import styles from './BaseForm.module.css';
 import { unsetAction } from '../../redux/actions/productsActions';
+import {
+  trim,
+  minValue,
+  required,
+  composeValidators,
+  mustBeNumber,
+} from '../utils/FormValidations';
 
 export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
   const { isLoading, error } = useSelector((state) => state.products);
@@ -17,15 +25,13 @@ export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
     dispatch(unsetAction());
   };
 
-  const required = (value) => (value ? undefined : 'Required');
-
   return (
     <BaseDialog>
       <>
         <h2>{actionText} Technician</h2>
         {error && <ErrorContainer message={error} />}
         <Form onSubmit={onFormSubmit} initialValues={initialState}>
-          {({ handleSubmit, submitting }) => (
+          {({ handleSubmit, submitting, values }) => (
             <form onSubmit={handleSubmit}>
               <div>
                 <Field name="name" validate={required}>
@@ -57,19 +63,49 @@ export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
                 </Field>
               </div>
               <div>
-                <Field name="price" validate={required}>
+                <Field
+                  name="price"
+                  validate={composeValidators(
+                    required,
+                    mustBeNumber,
+                    minValue(0)
+                  )}
+                >
                   {({ input, meta }) => (
                     <TextInput input={input} meta={meta} name="Price" />
                   )}
                 </Field>
               </div>
+              <Field name="isDigital" type="checkbox">
+                {({ input }) => (
+                  <label>
+                    Is Digital?
+                    <Checkbox {...input} />
+                  </label>
+                )}
+              </Field>
               <div>
-                <Field name="weightInKg" validate={required}>
+                <Field
+                  name="weightInKg"
+                  validate={composeValidators(
+                    required,
+                    mustBeNumber,
+                    minValue(0)
+                  )}
+                  parse={trim}
+                >
                   {({ input, meta }) => (
-                    <TextInput input={input} meta={meta} name="Weight, in KG" />
+                    <TextInput
+                      input={input}
+                      value={values.isDigital ? 0 : input.value}
+                      meta={meta}
+                      name="Weight, in KG"
+                      disabled={values.isDigital}
+                    />
                   )}
                 </Field>
               </div>
+
               <div className={styles.actionsContainer}>
                 <Button
                   disabled={submitting}

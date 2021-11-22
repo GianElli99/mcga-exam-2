@@ -11,11 +11,11 @@ export const AddForm = () => {
   };
   const newProduct = {
     name: '',
-    price: null,
+    price: '',
     shortDescription: '',
     fullDescription: '',
     isDigital: false,
-    weightInKg: null,
+    weightInKg: '0',
   };
   return (
     <BaseDialog>
