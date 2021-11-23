@@ -1,5 +1,13 @@
 export const required = (value) => (value ? undefined : 'Required');
 
+export const someTimesRequired = (conditioner) => (value) => {
+  if (!conditioner) {
+    return undefined;
+  }
+
+  return value ? undefined : 'Required';
+};
+
 export const trim = (value) => value && value.trim && value.trim();
 
 export const mustBeNumber = (value) =>

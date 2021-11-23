@@ -15,7 +15,7 @@ export const AddForm = () => {
     shortDescription: '',
     fullDescription: '',
     isDigital: false,
-    weightInKg: '0',
+    weightInKg: '',
   };
   return (
     <BaseDialog>

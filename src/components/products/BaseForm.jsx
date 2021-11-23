@@ -10,11 +10,11 @@ import Checkbox from '@mui/material/Checkbox';
 import styles from './BaseForm.module.css';
 import { unsetAction } from '../../redux/actions/productsActions';
 import {
-  trim,
   minValue,
   required,
   composeValidators,
   mustBeNumber,
+  someTimesRequired,
 } from '../utils/FormValidations';
 
 export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
@@ -25,12 +25,27 @@ export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
     dispatch(unsetAction());
   };
 
+  const generalValidation = (values) => {
+    const errors = {};
+    const validationsForWeight = composeValidators(
+      someTimesRequired(!values.isDigital),
+      mustBeNumber,
+      minValue(0)
+    );
+    errors.weightInKg = validationsForWeight(values.weightInKg);
+    return errors;
+  };
+
   return (
     <BaseDialog>
       <>
         <h2>{actionText} Technician</h2>
         {error && <ErrorContainer message={error} />}
-        <Form onSubmit={onFormSubmit} initialValues={initialState}>
+        <Form
+          onSubmit={onFormSubmit}
+          initialValues={initialState}
+          validate={generalValidation}
+        >
           {({ handleSubmit, submitting, values }) => (
             <form onSubmit={handleSubmit}>
               <div>
@@ -85,19 +100,10 @@ export const BaseForm = ({ initialState, actionText, onFormSubmit }) => {
                 )}
               </Field>
               <div>
-                <Field
-                  name="weightInKg"
-                  validate={composeValidators(
-                    required,
-                    mustBeNumber,
-                    minValue(0)
-                  )}
-                  parse={trim}
-                >
+                <Field name="weightInKg">
                   {({ input, meta }) => (
                     <TextInput
                       input={input}
-                      value={values.isDigital ? 0 : input.value}
                       meta={meta}
                       name="Weight, in KG"
                       disabled={values.isDigital}
