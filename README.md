@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Products FrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This proyect consist of a React application which consumes and API made previously.
 
-## Available Scripts
+## Do you want to use it?
 
-In the project directory, you can run:
+This project was built and deployed to Heroku and is already connected with the Backend.
 
-### `npm start`
+1. Click the following link: [Heroku Deployment](https://mgca-test-1.herokuapp.com/).
+2. Start using the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Do you want to make changes?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+If you want to run this project locally, you need to clone not only this repo, but also the backend.
 
-### `npm test`
+1. Clone the FrontEnd
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+git clone https://github.com/GianElli99/mcga-exam-2.git
+cd mcga-exam-2
+```
 
-### `npm run build`
+2. Create and config your environment variables in a `.env.development.local` file, you can use the `.env.development.local.example` as a guide
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Clone the Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+git clone https://github.com/GianElli99/mcga-exam-1.git
+cd mcga-exam-1
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Create and config your environment variables in a `.env` file, you can use the `.env.example` as a guide
 
-### `npm run eject`
+5. Now you are ready to run both proyects.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+6. Open a terminal and issue the following commands:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+cd mcga-exam-1
+npm install
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+7. Open another terminal and issue the following commands:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+cd mcga-exam-2
+npm install
+npm start
+```
