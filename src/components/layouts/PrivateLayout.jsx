@@ -4,9 +4,9 @@ import { Footer } from '../ui/Footer';
 import { Header } from '../ui/Header';
 import { MainContent } from '../ui/MainContent';
 import { NavBar } from '../ui/NavBar';
-import styles from './MainLayout.module.css';
+import styles from './PrivateLayout.module.css';
 
-export const MainLayout = () => {
+export const PrivateLayout = () => {
   return (
     <div className={styles.wrapper}>
       <Header />
