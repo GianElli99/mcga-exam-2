@@ -6,8 +6,10 @@ import { PublicLayout } from '../components/layouts/PublicLayout';
 // Screens
 import { HomeScreen } from '../components/home/HomeScreen';
 import { ProductsScreen } from '../components/products/ProductsScreen';
-import { RequireAuth } from '../auth/RequireAuth';
-import { NotRequireAuth } from '../auth/NotRequireAuth';
+import { LogInScreen } from '../components/auth/LogInScreen';
+// Auth
+import { NotRequireAuth } from '../components/auth/NotRequireAuth';
+import { RequireAuth } from '../components/auth/RequireAuth';
 
 export const MainRouter = () => {
   return (
@@ -16,7 +18,7 @@ export const MainRouter = () => {
         <Route element={<NotRequireAuth />}>
           <Route element={<PublicLayout />}>
             <Route path="/" element={<ProductsScreen />} />
-            <Route path="login" element={<HomeScreen />} />
+            <Route path="login" element={<LogInScreen />} />
           </Route>
         </Route>
 

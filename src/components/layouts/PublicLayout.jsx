@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { LogInHeader } from '../ui/LogInHeader';
+import { PublicHeader } from '../ui/PublicHeader';
 export const PublicLayout = () => {
   return (
     <div>
-      <LogInHeader />
+      <PublicHeader />
       <Outlet />
     </div>
   );
