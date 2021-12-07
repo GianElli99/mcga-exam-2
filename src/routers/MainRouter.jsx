@@ -7,6 +7,7 @@ import { PublicLayout } from '../components/layouts/PublicLayout';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { ProductsScreen } from '../components/products/ProductsScreen';
 import { LogInScreen } from '../components/auth/LogInScreen';
+import { ProductsPublicScreen } from '../components/products/ProductsPublicScreen';
 // Auth
 import { NotRequireAuth } from '../components/auth/NotRequireAuth';
 import { RequireAuth } from '../components/auth/RequireAuth';
@@ -17,7 +18,7 @@ export const MainRouter = () => {
       <Routes>
         <Route element={<NotRequireAuth />}>
           <Route element={<PublicLayout />}>
-            <Route path="/" element={<ProductsScreen />} />
+            <Route path="/" element={<ProductsPublicScreen />} />
             <Route path="login" element={<LogInScreen />} />
           </Route>
         </Route>

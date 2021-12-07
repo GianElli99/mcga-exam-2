@@ -1,13 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { LogOut } from '../../redux/actions/authActions';
 import styles from './PrivateHeader.module.css';
 
 export const PrivateHeader = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     dispatch(LogOut());
+    navigate('/');
   };
 
   return (
