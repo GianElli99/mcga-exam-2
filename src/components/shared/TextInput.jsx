@@ -7,7 +7,6 @@ export const TextInput = ({ input, meta, name, required = true, ...rest }) => {
     <TextField
       type="text"
       {...input}
-      {...rest}
       autoComplete="off"
       label={name}
       required={required}
@@ -16,6 +15,7 @@ export const TextInput = ({ input, meta, name, required = true, ...rest }) => {
       size="small"
       fullWidth
       margin="normal"
+      {...rest}
     />
   );
 };

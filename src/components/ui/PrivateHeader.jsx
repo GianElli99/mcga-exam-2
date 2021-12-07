@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { LogOut } from '../../redux/actions/authActions';
 import styles from './PrivateHeader.module.css';
 
 export const PrivateHeader = () => {
   const dispatch = useDispatch();
+  const username = useSelector((state) => state.auth.username);
   const navigate = useNavigate();
 
   const handleLogOut = () => {
@@ -16,7 +17,10 @@ export const PrivateHeader = () => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Easy Buy</h1>
-      <button onClick={handleLogOut}>Log out</button>
+      <div>
+        Hi, {username}
+        <button onClick={handleLogOut}>Log out</button>
+      </div>
     </div>
   );
 };
