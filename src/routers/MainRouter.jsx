@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { PrivateLayout } from '../components/layouts/PrivateLayout';
 import { PublicLayout } from '../components/layouts/PublicLayout';
 // Screens
-import { HomeScreen } from '../components/home/HomeScreen';
+import { DashboardScreen } from '../components/dashboard/DashboardScreen';
 import { ProductsScreen } from '../components/products/ProductsScreen';
 import { LogInScreen } from '../components/auth/LogInScreen';
 import { ProductsPublicScreen } from '../components/products/ProductsPublicScreen';
@@ -25,7 +25,7 @@ export const MainRouter = () => {
 
         <Route path="private" element={<RequireAuth />}>
           <Route element={<PrivateLayout />}>
-            <Route index element={<HomeScreen />} />
+            <Route index element={<DashboardScreen />} />
             <Route path="products" element={<ProductsScreen />} />
           </Route>
         </Route>

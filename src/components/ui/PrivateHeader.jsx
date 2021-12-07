@@ -15,7 +15,7 @@ export const PrivateHeader = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>Gian&apos;s Products</h1>
+      <h1 className={styles.title}>Easy Buy</h1>
       <button onClick={handleLogOut}>Log out</button>
     </div>
   );

@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.box {
+  height: 16rem;
+  min-width: 12rem;
+  background-color: aqua;
+  border-radius: 1rem;
+  text-align: center;
+}
+.products {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: rgb(200, 250, 205);
+  color: rgb(0, 82, 73);
+}
