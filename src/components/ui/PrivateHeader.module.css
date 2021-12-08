@@ -11,6 +11,5 @@
   justify-content: flex-end;
   box-sizing: border-box;
   height: 5rem;
-  border-bottom: 1px solid var(--nav-item-border-color);
-  background-color: var(--secondary-bg-color);
+  background-color: var(--light-color);
 }
