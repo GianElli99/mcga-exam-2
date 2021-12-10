@@ -2,6 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: var(--light-color);
+}
+.formWrapper {
+  margin-top: 10rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .form {
@@ -10,4 +18,7 @@
 
 .button {
   margin-top: 1rem;
+}
+.greyColor {
+  color: #9d9d9d;
 }

@@ -1,4 +1,8 @@
-import { AUTH_LOG_IN, AUTH_LOG_OUT } from '../../constants/authTypes';
+import {
+  AUTH_LOG_IN,
+  AUTH_LOG_OUT,
+  AUTH_SET_ERROR,
+} from '../../constants/authTypes';
 
 const initialState = {
   isLogged: false,
@@ -22,6 +26,12 @@ export const authReducer = (state = initialState, action) => {
         isLogged: false,
         username: undefined,
         error: undefined,
+      };
+
+    case AUTH_SET_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
 
     default:

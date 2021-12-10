@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { LogIn } from '../../redux/actions/authActions';
+import { LogInAsync } from '../../redux/actions/authActions';
 import { ErrorContainer } from '../shared/ErrorContainer';
 import { required } from '../utils/FormValidations';
 import { TextInput } from '../shared/TextInput';
@@ -13,14 +13,16 @@ export const SignInScreen = () => {
   const error = useSelector((state) => state.auth.error);
 
   const handleLogIn = (values) => {
-    dispatch(LogIn(values.username));
+    dispatch(LogInAsync(values));
   };
 
   return (
     <div className={styles.wrapper}>
-      <div>
+      <div className={styles.formWrapper}>
         <h2>Sign In to Easy Buy</h2>
-        <p>Enter your details below.</p>
+        <p className={styles.greyColor}>
+          {"Enter your details below. (We suggest entering 'Gian')"}
+        </p>
         {error && <ErrorContainer message={error} />}
         <Form onSubmit={handleLogIn}>
           {({ handleSubmit, submitting }) => (

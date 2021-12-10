@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { LogOut } from '../../redux/actions/authActions';
+import Button from '@mui/material/Button';
 import styles from './PrivateHeader.module.css';
 
 export const PrivateHeader = () => {
@@ -16,10 +17,15 @@ export const PrivateHeader = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div>
-        Hi, {username}
-        <button onClick={handleLogOut}>Log out</button>
-      </div>
+      <p className={styles.username}>Hi, {username}</p>
+      <Button
+        onClick={handleLogOut}
+        variant="outlined"
+        size="small"
+        color="error"
+      >
+        Log out
+      </Button>
     </div>
   );
 };
