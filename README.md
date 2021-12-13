@@ -6,7 +6,7 @@ This proyect consist of a React application which consumes and API made previous
 
 This project was built and deployed to Heroku and is already connected with the Backend.
 
-1. Click the following link: [Heroku Deployment](https://mgca-test-1.herokuapp.com/).
+1. Click the following link: [Heroku](https://mern-products-frontend.herokuapp.com/).
 2. Start using the app.
 
 ## Do you want to make changes?
@@ -16,8 +16,7 @@ If you want to run this project locally, you need to clone not only this repo, b
 1. Clone the FrontEnd
 
 ```sh
-git clone https://github.com/GianElli99/mcga-exam-2.git
-cd mcga-exam-2
+git clone https://github.com/GianElli99/mern-products-frontend.git
 ```
 
 2. Create and config your environment variables in a `.env.development.local` file, you can use the `.env.development.local.example` as a guide
@@ -25,8 +24,7 @@ cd mcga-exam-2
 3. Clone the Backend
 
 ```sh
-git clone https://github.com/GianElli99/mcga-exam-1.git
-cd mcga-exam-1
+git clone https://github.com/GianElli99/mern-products-backend.git
 ```
 
 4. Create and config your environment variables in a `.env` file, you can use the `.env.example` as a guide
@@ -36,7 +34,7 @@ cd mcga-exam-1
 6. Open a terminal and issue the following commands:
 
 ```sh
-cd mcga-exam-1
+cd mern-products-backend
 npm install
 npm start
 ```
@@ -44,7 +42,7 @@ npm start
 7. Open another terminal and issue the following commands:
 
 ```sh
-cd mcga-exam-2
+cd mern-products-frontend
 npm install
 npm start
 ```

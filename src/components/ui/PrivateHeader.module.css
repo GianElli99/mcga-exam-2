@@ -7,9 +7,12 @@
 }
 .wrapper {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
-  height: 5rem;
-  border-bottom: 1px solid var(--nav-item-border-color);
-  background-color: var(--secondary-bg-color);
+  padding: 2rem;
+  background-color: var(--light-color);
+}
+.username {
+  margin: 0 1rem;
 }

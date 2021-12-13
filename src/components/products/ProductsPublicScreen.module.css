@@ -1,0 +1,19 @@
+.wrapper {
+  background-color: var(--light-color);
+}
+.title {
+  font-size: 5rem;
+  margin-left: 4rem;
+  margin-bottom: 0;
+}
+.subtitle {
+  font-size: 2rem;
+  color: #9d9d9d;
+  margin-left: 4rem;
+}
+.productsWrapper {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
