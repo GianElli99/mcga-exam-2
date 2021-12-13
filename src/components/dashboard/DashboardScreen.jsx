@@ -5,12 +5,21 @@ export const DashboardScreen = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.box + ' ' + styles.products}>
-        <p>475</p>
-        <p>Products</p>
+        <p className={styles.number}>475</p>
+        <p className={styles.category}>Products</p>
       </div>
-      <div className={styles.box + ' ' + styles.users}>Users</div>
-      <div className={styles.box + ' ' + styles.sales}>Sales</div>
-      <div className={styles.box + ' ' + styles.uptime}>Uptime</div>
+      <div className={styles.box + ' ' + styles.users}>
+        <p className={styles.number}>+999</p>
+        <p className={styles.category}>Users</p>
+      </div>
+      <div className={styles.box + ' ' + styles.sales}>
+        <p className={styles.number}>4532</p>
+        <p className={styles.category}>Sales</p>
+      </div>
+      <div className={styles.box + ' ' + styles.uptime}>
+        <p className={styles.number}>99,8%</p>
+        <p className={styles.category}>Uptime</p>
+      </div>
     </div>
   );
 };

@@ -6,13 +6,31 @@
 .box {
   height: 16rem;
   min-width: 12rem;
-  background-color: aqua;
   border-radius: 1rem;
   text-align: center;
-}
-.products {
   font-size: 1rem;
   font-weight: 500;
+}
+.products {
   background-color: rgb(200, 250, 205);
   color: rgb(0, 82, 73);
+}
+.users {
+  background-color: rgb(208, 242, 255);
+  color: rgb(4, 41, 122);
+}
+.sales {
+  background-color: rgb(255, 247, 205);
+  color: rgb(122, 79, 1);
+}
+.uptime {
+  background-color: rgb(255, 231, 217);
+  color: rgb(122, 12, 46);
+}
+.number {
+  font-size: 4rem;
+}
+.category {
+  font-weight: bold;
+  font-style: italic;
 }
