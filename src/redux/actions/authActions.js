@@ -1,7 +1,10 @@
+import axios from 'axios';
+
 import {
   AUTH_LOG_IN,
   AUTH_LOG_OUT,
   AUTH_SET_ERROR,
+  AUTH_SET_LOADING_TRUE,
 } from '../../constants/authTypes';
 
 export const LogIn = (username) => {
@@ -15,6 +18,11 @@ export const LogOut = () => {
     type: AUTH_LOG_OUT,
   };
 };
+export const SetLoading = () => {
+  return {
+    type: AUTH_SET_LOADING_TRUE,
+  };
+};
 export const SetError = (error) => {
   return {
     type: AUTH_SET_ERROR,
@@ -23,9 +31,30 @@ export const SetError = (error) => {
 };
 
 export const LogInAsync = (values) => async (dispatch) => {
-  if (values.username === 'Gian' && values.password === 'Gian') {
-    return dispatch(LogIn(values.username));
-  } else {
-    return dispatch(SetError(["Invalid credentials, Try with 'Gian'"]));
+  try {
+    const res = await axios.post(
+      // eslint-disable-next-line no-undef
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/auth/signin`,
+      values
+    );
+    if (res.status === 200) {
+      return dispatch(LogIn(values.username));
+    }
+  } catch (error) {
+    return dispatch(SetError(error?.response?.data?.errors));
+  }
+};
+export const SignUpAsync = (values) => async (dispatch) => {
+  try {
+    const res = await axios.post(
+      // eslint-disable-next-line no-undef
+      `${process.env.REACT_APP_BACKEND_URL_PORT}/api/auth/signup`,
+      values
+    );
+    if (res.status === 201) {
+      return dispatch(LogIn(values.username));
+    }
+  } catch (error) {
+    return dispatch(SetError(error?.response?.data?.errors));
   }
 };

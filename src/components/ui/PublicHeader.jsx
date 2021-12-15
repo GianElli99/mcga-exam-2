@@ -12,11 +12,24 @@ export const PublicHeader = () => {
       return false;
     }
   };
+  const alreadyInSignUpPage = () => {
+    if (location.pathname === '/signup') {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div className={styles.header}>
       <Link className={styles.link} to={alreadyInSignInPage() ? '/' : '/login'}>
         {alreadyInSignInPage() ? 'Go back to home' : 'Sign In'}
+      </Link>
+      <Link
+        className={styles.link}
+        to={alreadyInSignUpPage() ? '/' : '/signup'}
+      >
+        {alreadyInSignUpPage() ? 'Go back to home' : 'Sign Up'}
       </Link>
     </div>
   );
