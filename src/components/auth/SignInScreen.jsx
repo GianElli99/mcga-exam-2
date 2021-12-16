@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { LogInAsync } from '../../redux/actions/authActions';
+import { LogInAsync, UnsetError } from '../../redux/actions/authActions';
 import { ErrorContainer } from '../shared/ErrorContainer';
 import { required } from '../utils/FormValidations';
 import { TextInput } from '../shared/TextInput';
@@ -10,7 +10,12 @@ import styles from './SignInScreen.module.css';
 
 export const SignInScreen = () => {
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.auth.error);
+  const { error, isLoading } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(UnsetError());
+    return () => {};
+  }, []);
 
   const handleLogIn = (values) => {
     dispatch(LogInAsync(values));
@@ -25,7 +30,7 @@ export const SignInScreen = () => {
         </p>
         {error && <ErrorContainer message={error} />}
         <Form onSubmit={handleLogIn}>
-          {({ handleSubmit, submitting }) => (
+          {({ handleSubmit }) => (
             <form onSubmit={handleSubmit} className={styles.form}>
               <div>
                 <Field name="username" validate={required}>
@@ -49,7 +54,8 @@ export const SignInScreen = () => {
               <div className={styles.button}>
                 <Button
                   type="submit"
-                  disabled={submitting}
+                  disabled={isLoading}
+                  loading={isLoading}
                   variant="contained"
                   fullWidth
                 >

@@ -5,6 +5,7 @@ import {
   AUTH_LOG_OUT,
   AUTH_SET_ERROR,
   AUTH_SET_LOADING_TRUE,
+  AUTH_UNSET_ERROR,
 } from '../../constants/authTypes';
 
 export const LogIn = (username) => {
@@ -29,9 +30,15 @@ export const SetError = (error) => {
     payload: error,
   };
 };
+export const UnsetError = () => {
+  return {
+    type: AUTH_UNSET_ERROR,
+  };
+};
 
 export const LogInAsync = (values) => async (dispatch) => {
   try {
+    dispatch(SetLoading());
     const res = await axios.post(
       // eslint-disable-next-line no-undef
       `${process.env.REACT_APP_BACKEND_URL_PORT}/api/auth/signin`,
@@ -46,6 +53,7 @@ export const LogInAsync = (values) => async (dispatch) => {
 };
 export const SignUpAsync = (values) => async (dispatch) => {
   try {
+    dispatch(SetLoading());
     const res = await axios.post(
       // eslint-disable-next-line no-undef
       `${process.env.REACT_APP_BACKEND_URL_PORT}/api/auth/signup`,

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { SignUpAsync } from '../../redux/actions/authActions';
+import { SignUpAsync, UnsetError } from '../../redux/actions/authActions';
 import { ErrorContainer } from '../shared/ErrorContainer';
 import { required } from '../utils/FormValidations';
 import { TextInput } from '../shared/TextInput';
@@ -11,6 +11,11 @@ import styles from './SignUpScreen.module.css';
 export const SignUpScreen = () => {
   const dispatch = useDispatch();
   const { error, isLoading } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(UnsetError());
+    return () => {};
+  }, []);
 
   const handleSignUp = (values) => {
     dispatch(
@@ -65,6 +70,7 @@ export const SignUpScreen = () => {
                 <Button
                   type="submit"
                   disabled={isLoading}
+                  loading={isLoading}
                   variant="contained"
                   fullWidth
                 >

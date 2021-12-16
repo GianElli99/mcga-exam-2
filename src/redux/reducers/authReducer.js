@@ -3,6 +3,7 @@ import {
   AUTH_LOG_OUT,
   AUTH_SET_ERROR,
   AUTH_SET_LOADING_TRUE,
+  AUTH_UNSET_ERROR,
 } from '../../constants/authTypes';
 
 const initialState = {
@@ -35,7 +36,13 @@ export const authReducer = (state = initialState, action) => {
     case AUTH_SET_ERROR:
       return {
         ...state,
-        error: action.payload,
+        error: action.payload || ['An error occurred'],
+        isLoading: false,
+      };
+    case AUTH_UNSET_ERROR:
+      return {
+        ...state,
+        error: undefined,
         isLoading: false,
       };
 

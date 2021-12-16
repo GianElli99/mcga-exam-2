@@ -63,7 +63,7 @@ export const productsReducer = (state = initialState, action) => {
     case PROD_SET_ERROR:
       return {
         ...state,
-        error: action.payload || 'An error ocurred.',
+        error: action.payload || ['An error ocurred.'],
         isLoading: false,
       };
     case PROD_SET_LOADING_TRUE:
