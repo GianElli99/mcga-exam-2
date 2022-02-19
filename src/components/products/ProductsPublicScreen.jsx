@@ -18,7 +18,7 @@ export const ProductsPublicScreen = () => {
     <div className={styles.wrapper}>
       <h1 className={styles.title}>We are Easy Buy</h1>
       <p className={styles.subtitle}>
-        There is no need to explain what we do well...
+        There is no need to explain what we do well...Branch develop
       </p>
       <div className={styles.productsWrapper}>
         {isLoading && (
