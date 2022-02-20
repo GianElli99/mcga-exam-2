@@ -21,6 +21,8 @@ export const ProductsPublicScreen = () => {
       <p className={styles.subtitle}>
         There is no need to explain what we do well...Branch
         {process.env.REACT_APP_IS_DEVELOP}
+        <br />
+        {'Context content:' + process.env.CONTEXT}
       </p>
       <div className={styles.productsWrapper}>
         {isLoading && (
