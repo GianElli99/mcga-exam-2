@@ -19,8 +19,10 @@ export const ProductsPublicScreen = () => {
     <div className={styles.wrapper}>
       <h1 className={styles.title}>We are Easy Buy</h1>
       <p className={styles.subtitle}>
-        There is no need to explain what we do well...Branch
-        {process.env.REACT_APP_IS_DEVELOP}
+        There is no need to explain what we do well..
+        {process.env.REACT_APP_CONTEXTO}
+        <br />
+        {console.log(process.env)}
         <br />
       </p>
       <div className={styles.productsWrapper}>
