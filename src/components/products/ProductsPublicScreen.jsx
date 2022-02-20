@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductOverview } from './ProductOverview';
@@ -22,7 +22,6 @@ export const ProductsPublicScreen = () => {
         There is no need to explain what we do well...Branch
         {process.env.REACT_APP_IS_DEVELOP}
         <br />
-        {'Context content:' + process.env.CONTEXT}
       </p>
       <div className={styles.productsWrapper}>
         {isLoading && (
